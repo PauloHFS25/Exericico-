@@ -11,11 +11,8 @@ namespace Exercicios
     {
         static void Main(string[] args)
         {
-            Console.Write("Informe o seu nome: ");//ESCREVAL | ESCREVA
-            string nome = Console.ReadLine(); //LEIA
-
-            //Mostrar
-            Console.WriteLine("O seu nome é: " + nome);
-        }//fim do métodos Main
+            ExercicioControl controle = new ExercicioControl();//Acessando a control
+            controle.ExecutarMenu();
+        }//fim do método Main
     }//classe
 }//fim o projeto
