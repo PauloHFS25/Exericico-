@@ -11,6 +11,7 @@ namespace Exercicios
     class ExercicioModel
     {
         //Área para declaração de variáveis globais
+        private int num;
         private int num1;
         private int num2;
         private double num3;
@@ -33,10 +34,15 @@ namespace Exercicios
             SetResultado(0);
         }//fim do construtor
 
+        public ExercicioModel(double num1, double num2)
+        {
+            SetNum3(num1);
+            SetNum4(num2);
+        }//fim do construtor
+
         //Métodos GETS E SETS
         //GET = Pegar, Obter, Consultar
         //SET = Alterar, Modificar, Configurar
-        
         public int GetNum1()
         {
             return this.num1;
@@ -86,18 +92,18 @@ namespace Exercicios
         {
             this.num4 = num4;
         }//fim do SetNum4
-        public int Soma()
+        public int Somar()
         {
             return this.num1 + this.num2;
-        }//fim do método
+        }//fim do método somar
 
-        public int Subtair()
+        public int Subtrair()
         {
             SetResultado(GetNum1() - GetNum2());
             return GetResultado();
         }//fim do método subtrair
 
-        public int Multiplcar()
+        public int Multiplicar()
         {
             SetResultado(GetNum1() * GetNum2());
             return GetResultado();
@@ -120,9 +126,9 @@ namespace Exercicios
             }//fim do if
         }//fim do dividir
 
-        public double Potencia(double bas, double exepoente)
+        public double Potencia(double bas, double expoente)
         {
-            return Math.Min.Pow(bas, exepoente);  
+            return Math.Pow(bas, expoente);  
         }//fim da potencia
 
         public double Raiz(double num)
@@ -133,7 +139,7 @@ namespace Exercicios
         public double Potencia()
         {
             return Math.Pow(GetNum3(), GetNum4());
-        }//fim do potencia sem parâetros
+        }//fim do potencia sem parâmetros
 
         public double RaizNum3()
         {
@@ -145,5 +151,27 @@ namespace Exercicios
             return Math.Sqrt(GetNum4());        
         }//fim do reiz num 4
 
+        public string Exercicio01(int ano)
+        {
+            if (ano % 4 == 0)
+            {
+                return ano + " é bissexto!";
+            }
+            else
+            {
+                return ano + " não é bissexto!";
+            }
+        }//fim do ano Bissexto
+        public string Exercicio02(int número)
+        {
+            if(num % 100 == 200)
+            {
+                return num + " está entre 100 é 200 ";
+            }
+            else
+            {
+                return num + " não está entre 100 e 200 ";
+            }
+        }//fim do número
     }//fim da classe
 }//fim do projeto
