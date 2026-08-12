@@ -66,8 +66,12 @@ namespace Exercicios
                               "7. Raiz\n" +
                               "8. Raiz com Parâmetros\n" +
                               "9. Exercício 01\n" +
-                              "10. Exercício 02\n");
-                    
+                              "10. Exercício 02\n" +
+                              "11. Exercício 03\n" +
+                              "12. Exercício 04\n" +
+                              "13. Exercício 05\n" +
+                              "14. Execício 06\n");
+                             
             SetOpcao(Convert.ToInt32(Console.ReadLine()));
             Console.Clear();//Limpa o console
         }//fim do menu
@@ -137,7 +141,7 @@ namespace Exercicios
 
                         Console.WriteLine("Informe o segundo número: ");
                         double num2 = Convert.ToDouble(Console.ReadLine());
-                        //Coamar o método que calcula a Raiz
+                        //Chamar o método que calcula a Raiz
                         Console.WriteLine("A raiz do primeiro número: " + this.modelo.Raiz(num1));
                         Console.WriteLine("A raiz do segundo número é: " + this.modelo.Raiz(num2));
                         break;
@@ -153,7 +157,68 @@ namespace Exercicios
                         //Mostrar o resultado
                         Console.WriteLine(this.modelo.Exercicio02(num));
                         break;
-                   
+                    case 11:
+                        Console.WriteLine("Informe a sua idade");
+                        int idade = Convert.ToInt32(Console.ReadLine());
+                        //Verificar a idade
+                        Console.WriteLine(this.modelo.Exercicio03(idade));
+                        break;
+                    case 12:
+                        Console.WriteLine("Informe o início do intervalo");
+                        int ini = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Informe o fim do intervalo");
+                        int fim = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Informe número que deseja buscar");
+                        int num5 = Convert.ToInt32(Console.ReadLine());
+                        //Buscar o número no intervalo
+                        Console.WriteLine(this.modelo.Exercicio04(ini, fim, num5));
+                        break;
+                    case 13:
+                        Console.WriteLine("Informe um número");
+                        num = Convert.ToInt32(Console.ReadLine());
+                        int anterior = 0;
+                        int resultado = 0;
+                        int i = 0;
+                        do
+                        {
+                            Console.WriteLine("Informe um outro número: ");
+                            anterior = Convert.ToInt32(Console.ReadLine());
+                            i++;
+                            resultado = this.modelo.Exercicio05(num, anterior);
+                            if (resultado == -1)
+                            {
+                                Console.WriteLine("O número está no intervalo");
+                            }
+                        } while (resultado != -1 && i < 10);
+
+                        if(resultado == -2)
+                        {
+                            Console.WriteLine("O número não está no intervalo");
+                        }
+
+                        break;
+                    case 14:
+                        
+                        Console.WriteLine("Informe o primeiro lado");
+                        double lado1 = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("Informe o segundo lado");
+                        double lado2 = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("Informe o terceiro lado");
+                        double lado3 = Convert.ToDouble(Console.ReadLine());
+
+                        //Faço as cpmparações
+
+                        Console.WriteLine(this.modelo.Exercício06(lado1, lado2, lado3));
+
+                        if(lado1 = lado2) (lado1 = lado3)(lado2 = lado3)
+                        {
+                            Console.WriteLine("Triângulo Equilátero");
+                        }
+                        if(lado1 <> lado2 && lado1 <> lado3 && lado2 <> lado3)
+                            { 
+                        }
+
+                        break;
                     default:
                         Console.WriteLine("Opção esclhida não é valida!");
                         break;
