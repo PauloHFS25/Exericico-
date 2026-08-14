@@ -234,6 +234,82 @@ namespace Exercicios
                 return "Não existe lado negtivo";
             }
            
-        }//fim do lado 
+        }//fim do lado
+        
+        // Leia um número inteiro e retornar todos os múltiplos menores que 100
+        
+        public string multiplo(int numero) 
+        {
+            //Contador
+            int i = 0;//Criando o contador e derfinindo o ponto de partida
+            string resultado = "";
+            while (i < 100)
+            {
+                if (numero % i == 0)
+                {
+
+                    resultado += i + "\n";
+                }
+                //Rodar o meu contador
+                i++;
+            }//fim do while
+            return resultado;
+        }//fim do mótodo
+
+        public string multiploFor(int numero)
+        {
+            string resultado = "";
+            for (int i = 1; i < 100; i ++)
+            {
+                if (numero % i == 0)
+                { 
+                    resultado += i + "\n";
+                }//fim do if
+            }//fim do for
+            return resultado;
+        }//fim do método
+
+        //Leia um número e verifique se ele é palíndromo(em: 121, 1331, 1441, 0660)
+
+        public bool EhPalindromo(string palin)
+        {
+            int fim = palin.Length - 1;//Meço o tamanho de um conjunto de caracteres
+            int inicio = 0;
+
+            while (inicio < fim)
+            {
+                if (palin.Substring(inicio, 1) != palin.Substring(fim, 1))
+                {
+                    return false;
+                }
+                inicio++;
+                fim--;
+            }//fim do while
+            return true;
+        }//fim do método
+
+        //Solicite ao usuário 10 números e conte os pares e impares
+
+        public void ContarParTmpar()
+        {
+            int contarPar   = 0;
+            int contarImpar = 0;
+
+            for (int i = 0; i < 10; i++)
+            {
+                Console.Write(i + 1 + "° número: ");
+                int num = Convert.ToInt32(Console.ReadLine());
+                //Comparações
+                if (num % 2 == 0)
+                {
+                    contarPar++;
+                }
+                else 
+                {
+                    contarImpar++;
+                }
+            }//fim do for
+            Console.WriteLine("A quantidade de pares é: " + contarPar + "\nA quantidade de ímpares é: "contarImpar);
+        }//fim do parImpar 
     }//fim da classe
 }//fim do projeto

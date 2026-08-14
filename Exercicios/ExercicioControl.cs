@@ -219,9 +219,27 @@ namespace Exercicios
                         }
 
                         break;
-                    default:
+                    case 15:
+                        Console.WriteLine("Informe um número: ");
+                        int num = Convert.ToInt32(Console.ReadLine());
+                        //Mostrar o resultado da operação
+                        Console.WriteLine(this.modelo.multiplo(num));
+                        break;
+                    case 16:
+                        Console.WriteLine("Informe um número: ");
+                        num = Convert.ToInt32(Console.ReadLine());
+                        //Mostrar o resultado da operação
+                        Console.WriteLine(this.modelo.multiploFor(num));
+                        break;
+                    case 17:
+                        Console.WriteLine("Informe um número: ");
+                        string palin = Console.ReadLine();
+                        if(this.modelo.Eh)
+                        
+                            default:
                         Console.WriteLine("Opção esclhida não é valida!");
                         break;
+
                 }//fim do escolha
             } while (GetOpcao() != 0);//fim do do...while 
         }//fim do método executar menu
