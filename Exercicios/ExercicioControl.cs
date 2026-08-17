@@ -70,8 +70,10 @@ namespace Exercicios
                               "11. Exercício 03\n" +
                               "12. Exercício 04\n" +
                               "13. Exercício 05\n" +
-                              "14. Execício 06\n");
-                             
+                              "14. Execício Multiplo\n" +
+                              "15. Execício Muliplo For\n" +
+                              "16. Execício Palindromo\n" +
+                              "17. Execício Verifique");
             SetOpcao(Convert.ToInt32(Console.ReadLine()));
             Console.Clear();//Limpa o console
         }//fim do menu
@@ -198,48 +200,70 @@ namespace Exercicios
 
                         break;
                     case 14:
-                        
-                        Console.WriteLine("Informe o primeiro lado");
-                        double lado1 = Convert.ToDouble(Console.ReadLine());
-                        Console.WriteLine("Informe o segundo lado");
-                        double lado2 = Convert.ToDouble(Console.ReadLine());
-                        Console.WriteLine("Informe o terceiro lado");
-                        double lado3 = Convert.ToDouble(Console.ReadLine());
 
-                        //Faço as cpmparações
-
-                        Console.WriteLine(this.modelo.Exercício06(lado1, lado2, lado3));
-
-                        if(lado1 = lado2) (lado1 = lado3)(lado2 = lado3)
-                        {
-                            Console.WriteLine("Triângulo Equilátero");
-                        }
-                        if(lado1 <> lado2 && lado1 <> lado3 && lado2 <> lado3)
-                            { 
-                        }
+                        Console.WriteLine("Informe um número: ");
+                        num = Convert.ToInt32(Console.ReadLine());
+                        //Mostrar o resultado da operação
+                        Console.WriteLine(this.modelo.multiplo(num));
 
                         break;
                     case 15:
-                        Console.WriteLine("Informe um número: ");
-                        int num = Convert.ToInt32(Console.ReadLine());
-                        //Mostrar o resultado da operação
-                        Console.WriteLine(this.modelo.multiplo(num));
-                        break;
-                    case 16:
                         Console.WriteLine("Informe um número: ");
                         num = Convert.ToInt32(Console.ReadLine());
                         //Mostrar o resultado da operação
                         Console.WriteLine(this.modelo.multiploFor(num));
                         break;
-                    case 17:
+                    case 16:
                         Console.WriteLine("Informe um número: ");
                         string palin = Console.ReadLine();
-                        if(this.modelo.Eh)
-                        
-                            default:
-                        Console.WriteLine("Opção esclhida não é valida!");
+                        if(this.modelo.EhPalindromo(palin) == false)
+                        {
+                            Console.WriteLine("Não é Palíndromo"); 
+                        }
+                        else
+                        {
+                            Console.WriteLine("É Palíndromo");  
+                        }
+
                         break;
 
+                    case 17:
+                        Console.WriteLine("Informe um número");
+                        string numero = Console.ReadLine();
+                        Console.WriteLine(this.modelo.Verifique(numero));
+                        break;
+
+                    case 18:
+                        int senha = 0;
+                        int senhaErrada = 0;
+                        do
+                        {
+                            Console.WriteLine("Informe um senha");
+                            senha = Convert.ToInt32(Console.ReadLine());
+
+                            if (this.modelo.VerificarSenha(senha) == true)
+                            {
+                                Console.WriteLine("Bem Vindo!!!");
+                            }
+                            else
+                            {
+                                
+                                senhaErrada++;
+                                if(senhaErrada == 3)
+                                {
+                                    Console.WriteLine("Senha Bloqueada!");
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Senha inválida, digite novamente!");
+                                }
+                            }
+                        } while (senhaErrada < 3 && this.modelo.VerificarSenha(senha) == false);
+                        break;
+                        default:
+                            Console.WriteLine("Opção esclhida não é valida!");
+                        break;
+                        
                 }//fim do escolha
             } while (GetOpcao() != 0);//fim do do...while 
         }//fim do método executar menu

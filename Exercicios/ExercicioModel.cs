@@ -23,7 +23,7 @@ namespace Exercicios
         private int ini;
         private int fim;
         private int num5;
-        private double lado1, lado2, lado3;
+        private int senha;
 
         //Método Contrutor: Instância as variáveis na memória
 
@@ -82,17 +82,17 @@ namespace Exercicios
 
         public double GetNum3()
         {
-            return this.num3;         
+            return this.num3;
         }//fim do GetNum3
 
         public void SetNum3(double num3)
         {
-            this.num3 = num3; 
+            this.num3 = num3;
         }//fim do setNum3
 
         public double GetNum4()
         {
-            return this.num4; 
+            return this.num4;
         }//fim do GetNum4
 
         public void SetNum4(double num4)
@@ -120,9 +120,9 @@ namespace Exercicios
         {
             if (GetNum2() < 0)
             {
-                return - 2;
+                return -2;
             }
-            else if(GetNum2() == 0)
+            else if (GetNum2() == 0)
             {
                 return -1;
             }
@@ -135,7 +135,7 @@ namespace Exercicios
 
         public double Potencia(double bas, double expoente)
         {
-            return Math.Pow(bas, expoente);  
+            return Math.Pow(bas, expoente);
         }//fim da potencia
 
         public double Raiz(double num)
@@ -154,8 +154,8 @@ namespace Exercicios
         }//fim do raiz
 
         public double RaizNum4()
-        { 
-            return Math.Sqrt(GetNum4());        
+        {
+            return Math.Sqrt(GetNum4());
         }//fim do reiz num 4
 
         public string Exercicio01(int ano)
@@ -171,7 +171,7 @@ namespace Exercicios
         }//fim do ano Bissexto
         public string Exercicio02(int numero)
         {
-           if(numero >= 100 && numero <= 200)
+            if (numero >= 100 && numero <= 200)
             {
                 return "O número está entre 100 e 200";
             }
@@ -183,11 +183,11 @@ namespace Exercicios
 
         public string Exercicio03(int idade)
         {
-            if(idade >= 16 && idade < 18)
+            if (idade >= 16 && idade < 18)
             {
                 return "Você pode votar, voto facultativo";
             }
-            if(idade >= 18)
+            if (idade >= 18)
             {
                 return "Você deve votar, voto obrigatório";
             }
@@ -204,12 +204,12 @@ namespace Exercicios
             }
             else
             {
-                return "O num5 NÃO está no intervalo";            
+                return "O num5 NÃO está no intervalo";
             }
         }//fim do ini, fim, num
         public int Exercicio05(int num, int anterior)
         {
-            if(anterior == num)
+            if (anterior == num)
             {
                 return -1;
             }
@@ -219,29 +219,12 @@ namespace Exercicios
             }
         }//fim do método
 
-        public string Exercício06(double lado1, double lado2, double lado3)
-        {
-            if(lado1 <= 0);
-            {
-                return "Não existe lado negativo";
-            }
-            if(lado2 <= 0) 
-            {
-                return "Não existe lado negtivo";
-            }
-            if(lado3 <= 0);
-            {
-                return "Não existe lado negtivo";
-            }
-           
-        }//fim do lado
-        
         // Leia um número inteiro e retornar todos os múltiplos menores que 100
-        
-        public string multiplo(int numero) 
+
+        public string multiplo(int numero)
         {
             //Contador
-            int i = 0;//Criando o contador e derfinindo o ponto de partida
+            int i = 1;//Criando o contador e derfinindo o ponto de partida
             string resultado = "";
             while (i < 100)
             {
@@ -259,10 +242,10 @@ namespace Exercicios
         public string multiploFor(int numero)
         {
             string resultado = "";
-            for (int i = 1; i < 100; i ++)
+            for (int i = 1; i < 100; i++)
             {
                 if (numero % i == 0)
-                { 
+                {
                     resultado += i + "\n";
                 }//fim do if
             }//fim do for
@@ -290,9 +273,9 @@ namespace Exercicios
 
         //Solicite ao usuário 10 números e conte os pares e impares
 
-        public void ContarParTmpar()
+        public void ContarParImpar()
         {
-            int contarPar   = 0;
+            int contarPar = 0;
             int contarImpar = 0;
 
             for (int i = 0; i < 10; i++)
@@ -304,12 +287,33 @@ namespace Exercicios
                 {
                     contarPar++;
                 }
-                else 
+                else
                 {
                     contarImpar++;
                 }
             }//fim do for
-            Console.WriteLine("A quantidade de pares é: " + contarPar + "\nA quantidade de ímpares é: "contarImpar);
-        }//fim do parImpar 
+            Console.WriteLine("A quantidade de pares é: " + contarPar + "\nA quantidade de ímpares é: " + contarImpar);
+        }//fim do parImpar
+
+        // Leia um número e verifique quanyos dígitos ele possui
+    
+        public int Verifique(string num)
+        {
+            return num.Length;
+        }//fim do Verifique
+
+        // Peça uma senha ao usuário e permita até 3 tentativas para acertar.
+        public bool VerificarSenha(int senha)
+        {
+            int senhaLocal = 1234;
+            if(senha == senhaLocal)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }//fim da classe
 }//fim do projeto
